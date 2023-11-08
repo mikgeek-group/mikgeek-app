@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none"
+    version="1.1" width="636" height="378" viewBox="0 0 636 378">
+    <defs>
+        <linearGradient x1="0.22845612466335297" y1="0.45691218972206116" x2="0.22845612466335297"
+            y2="0.9999999403953552" id="master_svg0__172">
+            <stop offset="0%" stop-color="#5F2AFF" stop-opacity="1" />
+            <stop offset="100%" stop-color="#5F2AFF" stop-opacity="0.00009999999747378752" />
+        </linearGradient>
+        <linearGradient x1="0.21646684408187866" y1="0.4329336881637573" x2="0.21646684408187866"
+            y2="1" id="master_svg1__173">
+            <stop offset="0%" stop-color="#5F2AFF" stop-opacity="1" />
+            <stop offset="100%" stop-color="#5F2AFF" stop-opacity="0.00009999999747378752" />
+        </linearGradient>
+    </defs>
+    <g>
+        <rect x="0" y="0" width="636" height="378" rx="0" fill="#F2F2F2" fill-opacity="1" />
+        <g style="opacity:0.09597749263048172;">
+            <ellipse cx="180.5" cy="180.5" rx="180.5" ry="180.5" fill="url(#master_svg0__172)"
+                fill-opacity="1" />
+        </g>
+        <g style="opacity:0.09597749263048172;">
+            <ellipse cx="455.5" cy="197.5" rx="180.5" ry="180.5" fill="url(#master_svg1__173)"
+                fill-opacity="1" />
+        </g>
+    </g>
+</svg>
