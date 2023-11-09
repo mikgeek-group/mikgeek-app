@@ -31,14 +31,20 @@ class _MainPageState extends State<MainPage> {
             icon: SvgIconAssets.communication,
             activeIcon: SvgIconAssets.communicationActive,
           ),
+          // NavigationItemModel(
+          //   icon: SvgIconAssets.circlePublish,
+          //   activeIcon: SvgIconAssets.circlePublishActive,
+          // ),
+
           NavigationItemModel(
-            icon: SvgIconAssets.circlePublish,
-            activeIcon: SvgIconAssets.circlePublishActive,
+            label: "发现",
+            icon: SvgIconAssets.find,
+            activeIcon: SvgIconAssets.findActive,
           ),
           NavigationItemModel(
             label: "消息",
-            icon: SvgIconAssets.communication,
-            activeIcon: SvgIconAssets.communicationActive,
+            icon: SvgIconAssets.message,
+            activeIcon: SvgIconAssets.messageActive,
           ),
           NavigationItemModel(
             label: "我的",

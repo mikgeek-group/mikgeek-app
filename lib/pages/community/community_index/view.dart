@@ -37,27 +37,19 @@ class _CommunityIndexPageState extends State<CommunityIndexPage> {
           tabs: state.tab.map<Widget>((e) => Tab(text: e)).toList(),
         ),
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: AppTheme.iDefaultPadding),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                MkButton(
-                  fontSize: Dimens.font_sp12,
-                  minWidth: 50.0,
-                  minHeight: 30.0,
-                  icon: Icon(FontIcon.Code),
-                  text: '创建社区',
-                  side: BorderSide(color: AppTheme.primaryColor),
-                  radius: 50.0,
-                  padding: EdgeInsets.all(10),
-                  textColor: AppTheme.primaryColor,
-                  backgroundColor: Colors.transparent,
-                  onPressed: () {
-                    controller.createCommunity();
-                  },
-                ),
-              ],
+          Container(
+            height: 10,
+            child: MkButton(
+              fontSize: Dimens.font_sp14,
+              minWidth: 10,
+              minHeight: 42,
+              icon: Icon(FontIcon.Operation),
+              text: '创建社区',
+              textColor: AppTheme.primaryColor,
+              backgroundColor: Colors.transparent,
+              onPressed: () {
+                controller.createCommunity();
+              },
             ),
           )
         ],
@@ -141,12 +133,12 @@ class _CommunityIndexPageState extends State<CommunityIndexPage> {
                     Stack(
                       children: [
                         Container(
-                          width: 110.w,
+                          width: 110,
                           height: 190,
                           margin: EdgeInsets.all(AppTheme.iDefaultPadding / 2),
                           padding: EdgeInsets.only(
                               top: AppTheme.iDefaultPadding * 1.4,
-                              bottom: AppTheme.iDefaultPadding),
+                              ),
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius:
@@ -167,25 +159,22 @@ class _CommunityIndexPageState extends State<CommunityIndexPage> {
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: TextStyles.textGray12),
-                              Gaps.vGap8,
+                              Gaps.vGap4,
 
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  MkButton(
-                                    fontSize: Dimens.font_sp12,
-                                    minWidth: 40.w,
-                                    minHeight: 24.h,
-                                    icon: Icon(FontIcon.Add,size: 12,),
-                                    text: '加入',
-                                    radius: 50.0,
-                                    padding: EdgeInsets.all(10),
-                                    backgroundColor: AppTheme.primaryColor,
-                                    onPressed: () {
-                                      controller.createCommunity();
-                                    },
-                                  ),
-                                ],
+                              Container(
+                                width: 74,
+                                child: MkButton(
+                                  fontSize: Dimens.font_sp12,
+                                  icon: Icon(FontIcon.Add,size: 12,),
+                                  text: '加入',
+                                  minHeight: 30,
+                                  // radius: 50.0,
+                                  // padding: EdgeInsets.all(0),
+                                  backgroundColor: AppTheme.primaryColor,
+                                  onPressed: () {
+                                    controller.createCommunity();
+                                  },
+                                ),
                               )
                             ],
                           ),
@@ -237,8 +226,8 @@ class _CommunityIndexPageState extends State<CommunityIndexPage> {
                 padding: EdgeInsets.all(AppTheme.iDefaultPadding),
                 child: Column(
                   children: [
-                    
-                    
+
+
                   ],
                 ),
               )

@@ -8,6 +8,7 @@ import 'package:mkapp/components/gaussian_blur_background.dart';
 import 'package:mkapp/components/list_cell_item.dart';
 import 'package:mkapp/pages/user/user_index/widgets/user_info.dart';
 import 'package:mkapp/router/route_names.dart';
+import 'package:mkapp/style/font_icon.dart';
 import 'package:mkapp/style/gaps.dart';
 import 'package:mkapp/style/theme.dart';
 
@@ -68,7 +69,7 @@ class _UserIndexPageState extends State<UserIndexPage> {
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             actions: [
-              IconButton(onPressed: ()=>{}, icon: Icon(Icons.settings,size: 22,))
+              IconButton(onPressed: ()=>{}, icon: Icon(FontIcon.Setting,size: 22,))
             ],
           ),
           body: Column(
