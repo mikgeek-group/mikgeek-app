@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:mkapp/components/load_image.dart';
+import 'package:mkapp/components/mk_load_image.dart';
 import 'package:mkapp/components/mk_button.dart';
 import 'package:mkapp/components/mk_scroll_view.dart';
 import 'package:mkapp/components/mk_text_field.dart';
@@ -9,8 +9,8 @@ import 'package:mkapp/style/font_icon.dart';
 import 'package:mkapp/style/gaps.dart';
 import 'package:mkapp/style/styles.dart';
 import 'package:mkapp/style/theme.dart';
-import 'package:mkapp/utils/change_notifier_manage.dart';
-import 'package:mkapp/utils/other_utils.dart';
+import 'package:mkapp/mixin/change_notifier_manage.dart';
+import 'package:mkapp/utils/utils.dart';
 
 import '../../../../style/colors.dart';
 import 'controller.dart';

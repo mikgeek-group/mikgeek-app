@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mkapp/style/colors.dart';
 import 'package:mkapp/style/dimens.dart';
+import 'package:mkapp/style/gaps.dart';
 import 'package:mkapp/style/theme.dart';
 
 /// 默认字号16，白字蓝底，高度42
@@ -9,7 +10,7 @@ class MkButton extends StatelessWidget {
   const MkButton({
     super.key,
     this.text = '',
-    this.fontSize = Dimens.font_sp16,
+    this.fontSize = Dimens.font_sp14,
     this.textColor,
     this.disabledTextColor,
     this.backgroundColor,
@@ -17,11 +18,13 @@ class MkButton extends StatelessWidget {
     this.minHeight = 42.0,
     this.minWidth = double.infinity,
     this.padding = const EdgeInsets.symmetric(horizontal: 16.0),
-    this.radius = 2.0,
+    this.radius = 5.0,
+    this.icon = null,
     this.side = BorderSide.none,
     required this.onPressed,
   });
 
+  final Icon? icon;
   final String text;
   final double fontSize;
   final Color? textColor;
@@ -50,8 +53,8 @@ class MkButton extends StatelessWidget {
                         ? Colours.dark_text_disabled
                         : Colours.text_disabled);
               }
-              // return textColor ?? (isDark ? Colours.dark_button_text : Colors.white);
-              return AppTheme.primaryColor;
+              return textColor ?? (isDark ? Colours.dark_button_text : Colors.white);
+              // return AppTheme.primaryColor;
             },
           ),
           // 背景颜色
@@ -63,7 +66,7 @@ class MkButton extends StatelessWidget {
                       : Colours.button_disabled);
             }
             return backgroundColor ??
-                (isDark ? Colours.dark_app_main : Colours.app_main);
+                (isDark ? Colours.dark_app_main :AppTheme.primaryColor);
           }),
           // 水波纹
           overlayColor: MaterialStateProperty.resolveWith((states) {
@@ -83,9 +86,27 @@ class MkButton extends StatelessWidget {
           ),
           side: MaterialStateProperty.all<BorderSide>(side),
         ),
-        child: Text(
-          text,
-          style: TextStyle(fontSize: fontSize),
-        ));
+        child: _buildChild()
+    );
+  }
+
+  _buildChild() {
+
+    Widget textWidget = Text(
+      text,
+      style: TextStyle(fontSize: fontSize),
+    );
+
+    if(icon != null){
+      return Row(
+        children: [
+          icon!,
+          Gaps.hGap5,
+          textWidget
+        ],
+      );
+    }
+
+    return textWidget;
   }
 }

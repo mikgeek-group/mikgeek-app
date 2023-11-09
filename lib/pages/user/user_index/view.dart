@@ -8,6 +8,7 @@ import 'package:mkapp/components/gaussian_blur_background.dart';
 import 'package:mkapp/components/list_cell_item.dart';
 import 'package:mkapp/pages/user/user_index/widgets/user_info.dart';
 import 'package:mkapp/router/route_names.dart';
+import 'package:mkapp/style/gaps.dart';
 import 'package:mkapp/style/theme.dart';
 
 import 'controller.dart';
@@ -26,6 +27,7 @@ class _UserIndexPageState extends State<UserIndexPage> {
   Widget _buildMenuList() {
     TextStyle _styleYellow = TextStyle(fontSize: 14, color: Colors.yellow[700]);
     return CardContainer(
+      // border: BorderRadius.all(Radius.circular(0)),
       padding: EdgeInsets.symmetric(horizontal: AppTheme.iDefaultPadding),
       child: Column(
         children: [
@@ -118,7 +120,8 @@ class _UserIndexPageState extends State<UserIndexPage> {
                 ],
               ),
 
-              SizedBox(height: 30.h),
+              Gaps.vGap32,
+
               _buildMenuList()
 
             ],

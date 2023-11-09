@@ -4,7 +4,7 @@ import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_f
 import 'package:get/get.dart';
 import 'package:mkapp/components/indicators/dot_indicator.dart';
 import 'package:mkapp/components/indicators/material_Indicator.dart';
-import 'package:mkapp/components/load_image.dart';
+import 'package:mkapp/components/mk_load_image.dart';
 import 'package:mkapp/pages/home/home_index/state.dart';
 import 'package:mkapp/style/font_icon.dart';
 import 'package:mkapp/style/theme.dart';
@@ -59,7 +59,7 @@ class _HomeIndexPageState extends State<HomeIndexPage> {
                 height: 120.h,
                 child: Swiper(
                   itemBuilder: (BuildContext context, int index) {
-                    return LoadImage("https://api.likepoems.com/img/pc/",
+                    return MkLoadImage("https://api.likepoems.com/img/pc/",
                         fit: BoxFit.fill);
                   },
                   autoplay: true,

@@ -4,7 +4,7 @@ import 'package:common_utils/common_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class ImageUtils {
+class UtilImage {
   
   static ImageProvider getAssetImage(String name, {ImageFormat format = ImageFormat.png}) {
     return AssetImage(getImgPath(name, format: format));

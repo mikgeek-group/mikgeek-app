@@ -31,7 +31,8 @@ class TextStyles {
     fontSize: 26.0,
     fontWeight: FontWeight.bold
   );
- 
+
+
   static const TextStyle textGray14 = TextStyle(
     fontSize: Dimens.font_sp14,
     color: Colours.text_gray,

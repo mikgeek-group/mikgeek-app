@@ -20,7 +20,17 @@ class AppTheme {
 
   // 系统级圆角
   static const BorderRadiusGeometry iBorderRadius =
-      BorderRadius.all(Radius.circular(10));
+  BorderRadius.all(Radius.circular(10));
+
+
+  static const List<BoxShadow>? iShadow = [
+    BoxShadow(
+        color: Colors.black12,
+        offset: Offset(1.0, 1.0), //阴影xy轴偏移量
+        blurRadius: 8.0, //阴影模糊程度
+        spreadRadius: 1.0 //阴影扩散程度
+    )
+  ];
 
   // 单个列按钮高度
   static const double iColumnMenuHeight = 46.0;
@@ -42,12 +52,13 @@ class AppTheme {
     ),
 
     inputDecorationTheme: InputDecorationTheme(
-      hintStyle: Get.isDarkMode ? TextStyles.textHint14 : TextStyles.textDarkGray14,
+      hintStyle: Get.isDarkMode ? TextStyles.textHint14 : TextStyles
+          .textDarkGray14,
     ),
     textSelectionTheme: TextSelectionThemeData(
-      selectionColor: AppTheme.primaryColor.withAlpha(70),
-      selectionHandleColor: AppTheme.primaryColor,
-      cursorColor: AppTheme.primaryColor
+        selectionColor: AppTheme.primaryColor.withAlpha(70),
+        selectionHandleColor: AppTheme.primaryColor,
+        cursorColor: AppTheme.primaryColor
     ),
     appBarTheme: const AppBarTheme(
       toolbarHeight: 42,
@@ -78,8 +89,9 @@ class AppTheme {
       indicatorColor: primaryColor,
       labelColor: Colors.black,
       unselectedLabelColor: Color(0xFFA2A5B9),
-      labelStyle: TextStyle(fontSize: 16,fontWeight: FontWeight.w900),
-      unselectedLabelStyle: TextStyle(fontSize: 14,fontWeight: FontWeight.normal),
+      labelStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w900),
+      unselectedLabelStyle: TextStyle(
+          fontSize: 14, fontWeight: FontWeight.normal),
     ),
   );
 

@@ -1,11 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:mkapp/utils/image_utils.dart';
+import 'package:mkapp/utils/util_image.dart';
 
 /// 图片加载（支持本地与网络图片）
-class LoadImage extends StatelessWidget {
+class MkLoadImage extends StatelessWidget {
   
-  const LoadImage(this.image, {
+  const MkLoadImage(this.image, {
     super.key,
     this.width, 
     this.height,
@@ -29,7 +29,7 @@ class LoadImage extends StatelessWidget {
   Widget build(BuildContext context) {
 
     if (image.isEmpty || image.startsWith('http')) {
-      final Widget holder = LoadAssetImage(holderImg, height: height, width: width, fit: fit);
+      final Widget holder = MkLoadAssetImage(holderImg, height: height, width: width, fit: fit);
       return CachedNetworkImage(
         imageUrl: image,
         placeholder: (_, __) => holder,
@@ -41,7 +41,7 @@ class LoadImage extends StatelessWidget {
         memCacheHeight: cacheHeight,
       );
     } else {
-      return LoadAssetImage(image,
+      return MkLoadAssetImage(image,
         height: height,
         width: width,
         fit: fit,
@@ -54,9 +54,9 @@ class LoadImage extends StatelessWidget {
 }
 
 /// 加载本地资源图片
-class LoadAssetImage extends StatelessWidget {
+class MkLoadAssetImage extends StatelessWidget {
   
-  const LoadAssetImage(this.image, {
+  const MkLoadAssetImage(this.image, {
     super.key,
     this.width,
     this.height, 
@@ -80,7 +80,7 @@ class LoadAssetImage extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Image.asset(
-      ImageUtils.getImgPath(image, format: format),
+      UtilImage.getImgPath(image, format: format),
       height: height,
       width: width,
       cacheWidth: cacheWidth,

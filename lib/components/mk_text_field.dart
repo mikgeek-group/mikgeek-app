@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:mkapp/components/load_image.dart';
+import 'package:mkapp/components/mk_load_image.dart';
 import 'package:mkapp/components/mk_button.dart';
 import 'package:mkapp/style/colors.dart';
 import 'package:mkapp/style/dimens.dart';
@@ -145,7 +145,7 @@ class _MkTextFieldState extends State<MkTextField> {
         label: '清空',
         hint: '清空输入框',
         child: GestureDetector(
-          child: LoadAssetImage('user/icon_delete',
+          child: MkLoadAssetImage('user/icon_delete',
             key: Key('${widget.keyName}_delete'),
             width: 18.0,
             height: 40.0,
@@ -161,7 +161,7 @@ class _MkTextFieldState extends State<MkTextField> {
         label: '密码可见开关',
         hint: '密码是否可见',
         child: GestureDetector(
-          child: LoadAssetImage(
+          child: MkLoadAssetImage(
             _isShowPwd ? 'user/icon_display' : 'user/icon_hide',
             key: Key('${widget.keyName}_showPwd'),
             width: 18.0,

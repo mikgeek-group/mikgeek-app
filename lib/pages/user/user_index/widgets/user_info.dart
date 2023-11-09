@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:mkapp/components/card_transparent_container.dart';
-import 'package:mkapp/components/load_image.dart';
+import 'package:mkapp/components/card_container.dart';
+import 'package:mkapp/components/mk_load_image.dart';
 import 'package:mkapp/pages/user/user_index/widgets/user_tag.dart';
 import 'package:mkapp/style/font_icon.dart';
+import 'package:mkapp/style/gaps.dart';
+import 'package:mkapp/style/styles.dart';
 import 'package:mkapp/style/theme.dart';
 
 class UserInfo extends StatelessWidget {
@@ -31,7 +33,7 @@ class UserInfo extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.all(Radius.circular(60)),
-                child: LoadImage("avatar", width: 60.w, height: 60.w),
+                child: MkLoadImage("avatar", width: 60.w, height: 60.w),
               ),
               Padding(
                 padding:
@@ -43,24 +45,24 @@ class UserInfo extends StatelessWidget {
                       children: [
                         Text(
                           "木木子",
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.normal),
+                          style: TextStyles.textBold16,
                         ),
                         SizedBox(width: 5.w),
-                        LoadImage('user/authentication', width: 18.w),
+                        MkLoadImage('user/authentication', width: 18.w),
                         SizedBox(width: 5.w),
-                        LoadImage('user/vip', width: 18.w)
+                        MkLoadImage('user/vip', width: 18.w)
                       ],
                     ),
-                    SizedBox(height: 5.h),
+                    Gaps.vGap5,
                     Text("美国帝国理工大学",
-                        style:
-                            TextStyle(color: Color(0xFF8D93A6), fontSize: 12)),
-                    SizedBox(height: 5.h),
+                        style:TextStyles.textGray12),
+
+                    Gaps.vGap5,
+
                     Row(
                       children: [
                         UserTag(color: AppTheme.primaryColor, title: "登船200天"),
-                        SizedBox(width: 5.h),
+                        Gaps.hGap5,
                         UserTag(color: Colors.orange, title: "登船200天"),
                       ],
                     )
@@ -79,10 +81,12 @@ class UserInfo extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.all(Radius.circular(50)),
               ),
-              child: IconButton(
-                  onPressed: () => {}, icon: Icon(FontIcon.Adjust)),
+              child: Center(
+                child: IconButton(
+                    onPressed: () => {}, icon: Icon(FontIcon.Adjust)),
+              ),
             ),
-            SizedBox(width: 10.w),
+          Gaps.hGap12,
             Container(
               width: 36.w,
               height: 36.w,
@@ -101,7 +105,8 @@ class UserInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CardTransparentContainer(
+    return CardContainer(
+      isTransparent: true,
       // padding: const EdgeInsets.all(AppTheme.iDefaultPadding),
       child: Column(
         children: [

@@ -109,6 +109,7 @@ flutter:
     - assets/svg/
     - assets/images/
     - assets/images/user/
+    - assets/images/empty/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

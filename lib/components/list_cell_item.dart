@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mkapp/style/font_icon.dart';
+import 'package:mkapp/style/gaps.dart';
+import 'package:mkapp/style/styles.dart';
 import 'package:mkapp/style/theme.dart';
 
 const _defaultExt = Text('');
@@ -46,13 +48,10 @@ class ListCellItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             textIcon,
-            const SizedBox(width: 10),
+            Gaps.hGap10,
             Text(
               value,
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.normal,
-              ),
+              style: TextStyles.text
             ),
             Expanded(
               flex: 1,

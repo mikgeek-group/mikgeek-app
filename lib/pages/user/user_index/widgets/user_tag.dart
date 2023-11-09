@@ -11,7 +11,7 @@ class UserTag extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(3.h),
+      padding: EdgeInsets.all(1),
       decoration: BoxDecoration(
         border: Border.all(
             width: 1.0,
