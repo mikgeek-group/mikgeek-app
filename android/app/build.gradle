@@ -6,9 +6,13 @@ if (localPropertiesFile.exists()) {
     }
 }
 
-def keystorePropertiesFile = rootProject.file("keystore.properties")
 def keystoreProperties = new Properties()
-keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+def keystorePropertiesFile = rootProject.file('keystore.properties')
+if (keystorePropertiesFile.exists()) {
+    keystorePropertiesFile.withReader('UTF-8') { reader ->
+        keystoreProperties.load(reader)
+    }
+}
 
 def flutterRoot = localProperties.getProperty('flutter.sdk')
 if (flutterRoot == null) {
@@ -51,17 +55,17 @@ android {
     }
 
     signingConfigs {
-        release {
-            keyAlias keystoreProperties['keyAlias']
-            keyPassword keystoreProperties['keyPassword']
-            storeFile file(keystoreProperties['storeFile'])
-            storePassword keystoreProperties['storePassword']
+        config {
+            keyAlias 'key'
+            keyPassword 'mikgeek'
+            storePassword 'mikgeek'
+            storeFile file('mikgeek.jks')
         }
     }
 
     buildTypes {
         release {
-            signingConfig signingConfigs.release
+            signingConfig signingConfigs.config
             // 启用缩减、混淆处理和优化功能，
             minifyEnabled true
             shrinkResources true
@@ -69,7 +73,7 @@ android {
         }
         debug{
             // debuge模式也使用证书
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.config
             ndk {
                 abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86', 'x86_64'
             }

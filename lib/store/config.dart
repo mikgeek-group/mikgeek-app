@@ -15,8 +15,6 @@ class ConfigStore extends GetxController {
     isFirstOpen = StorageService.to.getBool(STORAGE_DEVICE_FIRST_OPEN_KEY);
   }
 
-
-
   // 标记用户已打开APP
   Future<bool> saveAlreadyOpen() {
     return StorageService.to.setBool(STORAGE_DEVICE_FIRST_OPEN_KEY, false);
